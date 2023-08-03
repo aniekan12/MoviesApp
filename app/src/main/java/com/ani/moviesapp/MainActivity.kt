@@ -16,6 +16,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -41,39 +43,31 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun BuildBody(name: String) {
     Column(
-
+        modifier = Modifier
+            .padding(horizontal = 12.dp)
+            .fillMaxSize()
     ) {
+
+        Image(
+            painterResource(id = R.drawable.ic_launcher_background),
+            contentDescription = "",
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 10.dp),
+        )
+
+
         Row(
-            horizontalArrangement = Arrangement.SpaceBetween
 
         ) {
             Text(
-                modifier = Modifier.padding(horizontal = 12.dp, vertical = 10.dp),
-                text = "hello $name",
-                style = TextStyle(
-                    fontSize = 22.sp,
-                )
-            )
+                text = "hiiii",
+                fontSize = 22.sp,
+                fontWeight = FontWeight.W600,
 
-            IconButton(onClick = { /*TODO*/ }) {
-                Icon(
-                    Icons.Filled.Settings,
-                    contentDescription = "",
-                    tint = Color.Black,
-                    modifier = Modifier.size(22.dp)
                 )
-            }
         }
 
-        Row(
-            modifier = Modifier
-                .padding(horizontal = 12.dp)
-                .fillMaxWidth()
-        ) {
-            Image(painterResource(id = R.drawable.ic_launcher_background), contentDescription = "")
-        }
-        
-        Text(text = "hiiii")
 
     }
 //    Spacer(modifier = Modifier.size(30.dp))
